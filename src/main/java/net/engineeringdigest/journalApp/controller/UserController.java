@@ -10,7 +10,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/user")
@@ -35,11 +35,10 @@ public class UserController
     }
 
     @DeleteMapping
-    public ResponseEntity<?> deleteUserById()
+    public ResponseEntity<?> greeting()
     {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        userRepository.deleteByUserName(authentication.getName());
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>("hi" + authentication.getName(), HttpStatus.OK);
     }
 
 }
