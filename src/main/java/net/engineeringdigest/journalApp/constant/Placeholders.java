@@ -1,4 +1,4 @@
-package net.engineeringdigest.journalApp.constants;
+package net.engineeringdigest.journalApp.constant;
 
 public interface Placeholders {
     String API_KEY = "<apiKey>";
